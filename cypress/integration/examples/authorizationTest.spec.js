@@ -8,14 +8,14 @@ context('Actions', () => {
     
 	cy.get('[class=btn-login]').click();
 
+	cy.get('[id=DOCTOR]').debug();	//вывод контрола в консоль отладки
 	cy.get('[id=DOCTOR]').click();
 	
 	cy.get('[id=panelTree]').should('have.css', 'width', '225px');
 	//доступ к окну браузера
 	cy.window().then( win => {
-		//debugger;
+		debugger;
 		return win.App['panelTree'].el.dom;
-		win.SpargoJS.UtilsJs
 	}).should('have.css', 'width', '225px');
 
   })
